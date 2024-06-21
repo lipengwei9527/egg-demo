@@ -16,6 +16,19 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [];
 
+  // 关闭scrf防护
+  config.security = {
+    csrf: {
+      enable: false
+    },
+  };
+  config.view = {
+    // 当遇到.html文件时，使用ejs模板引擎来渲染
+    mapping: {
+      '.html': 'ejs',
+    },
+  };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
